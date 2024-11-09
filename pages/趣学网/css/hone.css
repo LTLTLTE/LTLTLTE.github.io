@@ -1,0 +1,332 @@
+/* 整体 */
+.zti{
+    width: 100%;
+    height: 169px;
+    background-color: rgb(255, 255, 255);
+}
+/* 导航栏 */
+.zti>.cont{
+    width: 1600px;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    margin: 0 auto;
+}
+/* logo */
+.zti .logo{
+    width: 200px;
+    height: 77px;
+    float: left;
+    margin-top: 20px;
+    position: relative;
+}
+.logo img{
+    width:100%;
+    height: 100%;
+    position: absolute;
+}
+/* 定位 */
+.zti .dingwei{
+    width: 100px;
+    height: 77px;
+    float: left;
+    margin-left: 250px;
+    margin-top: 20px;
+    position: relative;  
+}
+/* 定位图片 */
+.dingwei img{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 15px;
+}
+/* 定位字 */
+.dingwei .gz{
+    width: 20px;
+    height: 20px;
+    top: 30px;
+    left: 50px;
+    position: relative;
+    color: darkgray;
+}
+/* 搜索框 */
+.shur{
+     width: 540px;
+     height: 77px;
+     background-color:rgb(255, 255, 255);
+     float: left;
+     border: 2px solid #2ab8f6;
+     position: relative;
+     margin-top: 20px;
+}
+/* 搜索框输入框 */
+.shur input{
+    width: 385px;
+    height: 100%;
+    float: left;
+    position: absolute;
+    left: 70px;
+    font-size: 20px;
+}
+/* 输入框放大镜 */
+.shur .shur1{
+    width: 50px;
+    height: 50px;
+    top: 15px;
+    left: 10px;
+    float: left;
+    position: absolute;
+}
+/* 输入框logo */
+.shur1 img{
+    width: 50px;
+    height: 50px;
+}
+/* 输入框搜索 */
+.shur .shur2{
+    width: 90px;
+    height: 100%;
+    background-color: #2ab8f6;
+    color: white;
+    position: absolute;
+    left: 450px;
+    text-align: center; 
+    line-height: 75px;
+}
+/* 导航栏右边 */
+.youbian{
+    width: 350px;
+    height: 77px;
+    float: left;
+    position: relative;
+    left: 45px;
+    margin-top: 20px;
+}
+.youbian .yb{
+    width: 100px;
+    height: 20px;
+    float:left;
+    left: 20px;
+    top: 30px;
+    position: relative;
+    color: rgba(101, 102, 104, 0.654);
+}
+/* 头像 */
+.tox{
+    width: 50px;
+    height: 50px;
+    float: left;
+    position: relative;
+    top: 35px;
+    left: 90px;
+}
+.tox img{
+    width: 100%;
+    height: 100%;
+}
+/* 首页 */
+.sye{
+    width: 100%;
+    height: 47px;
+    float: left;
+    margin-top: 20px;
+}
+.sye .weo{
+    width: 90px;
+    height: 100%;
+    float: left;
+    position: relative;
+    line-height: 45px;
+}
+.hre{
+    margin: 0;
+}
+.nr{
+    width: 100%;
+    height: 600px;
+    background-color: #f7f8fa;;
+}
+.nrbx{
+    width: 1600px;
+    height: 100%;
+    background-color: #f7f8fa;
+    margin: 0 auto;
+}
+.koe{
+    width: 100%;
+    height: 50px;
+}
+.koe .kie{
+    width: 90px;
+    height: 100%;
+    color: #979797f7;
+    line-height: 45px;
+    position: relative;
+    font-size: 13px;
+}
+.nrbx>.tup {
+    width: 100%;
+    height: 550px;
+    background-color: rgb(255, 255, 255);
+}
+.tuming{
+    width: 100%;
+    height: 89px;
+    float: left;
+    position: relative;
+}
+.tuming .ming{
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    top: 20px;
+    left: 40px;
+}
+.tu1{
+    width: 100%;
+    height: 100%; 
+}
+.tu1 .tp1{
+    width: 450px;
+    height: 400px;
+    background-color: #f7f7f7;
+    float: left;
+    margin-top: 20px;
+    margin-left: 50px;   
+}
+.tp1 img{
+    width: 100%;
+    height: 50%;
+    position: relative;   
+}
+.tu1 .tp2{
+    width: 450px;
+    height: 400px;
+    background-color: #f7f7f7;
+    float: left;
+    margin-top: 20px;
+    margin-left: 80px;
+}
+.tp2 img{
+    width: 100%;
+    height: 50%;
+    position: relative; 
+}
+.he2{
+    color: #56a6ce;
+}
+.tu1 .tp3{
+    width: 450px;
+    height: 400px;
+    background-color: #f7f7f7;
+    float: right;
+    margin-top: 20px;
+    margin-right: 50px;
+}
+.tp3 img{
+    width: 100%;
+    height: 50%;
+    position: relative;  
+}
+.tp1 .tp1zi{
+    text-align: center; 
+    line-height: 40px;
+}
+.tp2 .tp2zi{
+    text-align: center; 
+    line-height: 40px;
+}
+.tp3 .tp3zi{
+    text-align: center; 
+    line-height: 40px;
+}
+.jiao{
+    width: 100%;
+    height: 170px;
+    background-color: #414141;
+}
+.jiao .jiaoxin{
+    width: 1600px;
+    height: 100%;
+    margin: 0 auto;
+}
+.jiaoxin .jiaozi{
+   width: 100%;
+   height: 90px;
+   float: left;
+   color: #f7f8fa;
+}
+.jiaozi .lxi{
+    width: 1600px;
+    height: 100%;
+}
+.lxi .lei{
+    width: 150px;
+    height: 100%;
+    float: left;
+    font-size: 25px;
+    position: relative;
+    top: 25px;
+}
+.jiaoxin .jiaoye2{
+    width: 100%;
+    height: 80px;
+    top: 90px;
+    position: relative;
+}
+.jiaoye2 .ye2zi{
+    width: 100%;
+    height: 70px;
+    position: absolute;
+    float: left;
+    top: 10px;
+    text-align: center; 
+    line-height: 35px;
+    color: azure;
+}
+.eio img{
+    width: 50px;
+    height: 50px;
+   margin-top: 20px;
+   position: relative;
+   right: 400px;
+   float: right;
+}
+.jiaozi .wb{
+    width: 130px;
+    height: 50%;
+    color: #999999;
+    position: relative;
+    float: right;
+    right: 220px;
+    top: 25px;
+    font-size: 30px;   
+}
+.eio2 img{
+    width: 50px;
+    height: 50px;
+   margin-top: 20px;
+   position: relative;
+   right: 20px;
+   float: right;
+    
+}
+.jiaozi .weixin{
+    width: 150px;
+    height: 50%;
+    color: #999999;
+    position: relative;
+    float: left;
+    left: 650px;
+    top: 25px;
+    font-size: 30px;   
+}
+
+.ye2zi .hr2{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    color: #999999;
+}
+
+

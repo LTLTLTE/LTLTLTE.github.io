@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>歌词播放器</title>
+    <style>
+        body {
+      background-color: #303030;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .player-container {
+      width: 90%;
+      width: 500px;
+      text-align: center;
+      background-color: #2c2c2c;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow:  1px 1px 10px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .lyrics-container {
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+      margin-top: 20px;
+    }
+
+    .lyrics {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 16px;
+      color: #888;
+    }
+
+    .lyrics li {
+      padding: 5px 0;
+    
+    }
+
+    .active {
+      color: rgb(41, 202, 30);
+      font-size: 25px;
+      font-weight: bold;
+    }
+    </style>
+</head>
+
+<body>
+
+    <div class="player-container">
+        <h1>谜宫 - MANTA</h1>
+
+        <div class="lyrics-container">
+            <ul class="lyrics" id="lyricBox">
+            </ul>
+        </div>
+
+        <audio id="audioPlayer" controls src="./manta-谜宫.mp3"></audio>
+    </div>
+
+    <script>
+        const lyrics = `
+        [00:30.18] 快把我的身心包装
+        [00:32.89] 向你的 忠贞 献上
+        [00:38.61] 这疯狂
+        [00:41.04] 去悉心的埋葬
+        [00:43.76] 又深挖出一具皮囊
+        [00:46.47] 许向宁：
+        [00:49.19] 点上浪漫的烛光
+        [00:51.91] 满怀期待微笑吟唱
+        [00:56.34] 用完美的手
+        [00:58.05] 环住你额头
+        [01:01.78] 撕开那伤口
+        [01:02.50] 又在缝合拼凑
+        [01:04.94] 爱你的枷锁
+        [01:09.66] 如此绝望又狂热
+        [01:11.10] 在谎言背后
+        [01:14.82] 有罪的挑逗
+        [01:24.54] 自甘的困兽
+        [01:27.26] 迷宫封好出口
+        [01:30.00] 纠缠即自由
+        [01:32.72] MANTA:
+        [01:35.44] 那就循环往复
+        [01:38.16] 爱到彼此互相折磨 到永久
+        [01:40.88] 季少一：
+        [01:43.60] 偷笑着
+        [01:46.32] 编织了怯的假象
+        [01:49.04] 越挣扎越不退让
+        [01:51.76] 别声张
+        [01:54.48] 江恪：
+        [01:57.20] 用痛感去衡量
+        [01:59.92] 血液之中荆棘生长
+        [02:02.64] 柏闻：
+        [02:05.36] 你尽管竭力逃亡
+        [02:08.08] 猎物猎手交换皮囊
+        [02:10.80] 许向安/许向宁：
+        [02:13.52] 用完美的手
+        [02:16.25] 环住你额头
+        [02:19.00] 撕开那伤口
+        [02:21.73] 又在缝合拼凑
+        [02:24.45] 季少一：
+        [02:27.18] 爱你的枷锁 如此绝望又狂热
+        [02:29.91] 柏闻/江恪：
+        [02:32.63] 在谎言背后
+        [02:35.36] 有罪的挑逗
+        [02:38.09] 自甘的困兽
+        [02:40.81] 迷宫封好出口
+        [02:43.54] 纠缠即自由
+        [02:46.27] MANTA:
+        [02:49.00] 那就循环往复
+        [02:51.73] 爱到彼此互相折磨 到
+        [02:54.45] 许向安：
+        [02:57.18] 永久
+        [03:00.00] (许向安：
+        [03:02.82] Woah)
+        [03:05.54] 柏闻/季少一：
+        [03:08.27] 我疯狂 我酝酿 侵占你的心脏
+        [03:11.00] 用疼痛 做奖赏 贪恋你的伪装
+        [03:13.73] 江恪/许向宁：
+        [03:16.45] 要盛放 要荒唐 内心的欲望
+        [03:19.18] 许向安：
+        [03:21.91] 请 慢慢品尝
+        [03:24.64] 我向死而生的渴望
+        [03:27.36] 柏闻：
+        [03:30.09] 不完美的手
+        [03:32.81] 乞求到颤抖
+        [03:35.54] 授予我伤口
+        [03:38.27] 不必缝合拼凑
+        [03:41.00] 许向宁：
+        [03:43.73] 爱你的枷锁
+        [03:46.45] 如此绝望又狂热 (狂热)
+        [03:49.18] MANTA
+        [03:51.91] 我们互相占有
+        [03:54.64] 有罪的同谋
+        [03:57.36] 恨如何不朽
+        [04:00.09] 谜宫没有尽头
+        [04:02.82] 纠缠即自由
+        [04:05.55] 那就循环往复
+        [04:08.27] 爱到彼此互相折磨 到永久
+            `;
+
+        const lyricBox = document.getElementById("lyricBox");
+
+        const parsedLyrics = lyrics.split("\n").filter(Boolean).map(line => {
+            const match = line.match(/\[(\d{2}):(\d{2})\.(\d{2})\](.*)/);
+            if (match) {
+                const [, min, sec, ms, text] = match;
+                const time = parseInt(min) * 60 + parseInt(sec) + parseInt(ms) / 100;
+                return { time, text: text.trim() };
+            }
+        }).filter(Boolean);
+        parsedLyrics.forEach((line) => {
+            const li = document.createElement("li");
+            li.innerText = line.text;
+            li.setAttribute("data-time", line.time);
+            lyricBox.appendChild(li);
+        });
+
+        const audioPlayer = document.getElementById("audioPlayer");
+
+        audioPlayer.ontimeupdate = () => {
+            const currentTime = audioPlayer.currentTime;
+            const lines = document.querySelectorAll(".lyrics li");
+
+            let activeLine = null;
+
+            lines.forEach(line => {
+                const time = parseFloat(line.getAttribute("data-time"));
+                if (time <= currentTime) {
+                    activeLine = line;
+                }
+                line.classList.remove("active");
+            });
+
+            if (activeLine) {
+                activeLine.classList.add("active");
+                activeLine.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+        };
+    </script>
+
+</body>
+
+</html>

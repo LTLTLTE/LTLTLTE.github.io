@@ -1,0 +1,39 @@
+/* 页面默认样式 */
+
+/* 重置游览器默认样式(resetCss.css) */
+
+html,body{
+    margin: 0;
+}
+
+h1,h2,h3,h4,h5,h6,p{
+           margin: 0;
+}
+
+a{
+   color:inherit;
+   text-decoration: none;
+}
+
+ul,ol,input{
+    margin: 0;
+    padding: 0;
+
+    /* 去除列表的标志(列表的实心圆,数字标志) */
+    list-style: none;
+
+}
+
+input{
+    border: none;
+    padding: 0;
+    outline: none;
+}
+
+.fl{
+    float: left;
+}
+
+.fr{
+    float: right;
+}

@@ -1,0 +1,301 @@
+/* 定义变量 */
+@primary-color: black;
+@bg-color: #f0f4f8;
+@font-color: #333;
+
+/* 通用样式 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding-top: 80px;
+}
+
+/* Header 样式 */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white; // 背景色，可以根据需求调整
+    z-index: 1000; // 设置更高的层级，避免被其他内容遮挡
+
+    .logo {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
+    .cles {
+        ul {
+            // display: flex;
+            list-style: none;
+            
+           position: relative;
+           right: 110px;
+           top:-10px;
+
+            li {
+                margin: 0 10px;
+                position: relative;
+                top: 25px;
+
+                a {
+                    text-decoration: none;
+                    color: #717171;
+                }
+            }
+        }
+
+        
+    }
+
+    .icons {
+        a { 
+            position: relative;
+            right: 20px;
+            top:-18px;
+            margin-left: 15px;
+            float: right;
+        }
+    }
+}
+
+/* Carousel 样式 */
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // padding: 20px;
+    height: 600px; /* 设置轮播图高度为600px */
+   
+   
+    .carousel-item {
+        max-width: 100%;
+    }
+
+    .carousel-inner {
+        .item {
+            margin: 0;
+           
+            img {
+                width: 100%;  /* 图片宽度为100% */
+                height: 600px; /* 高度自动，保持比例 */
+                object-fit: cover; /* 确保图片覆盖整个容器 */
+            }
+        }
+    }
+}
+.carousel-control.left,
+.carousel-control.right {
+    box-shadow: none !important;
+    background-image: none !important; /* 额外去除背景图，防止阴影来自背景 */
+    filter: none !important; /* 如果阴影来自滤镜效果，清除滤镜 */
+}
+
+
+.dropdown {
+    position: relative; // 确保父元素相对定位
+    
+    .dropdown-menu {
+       
+        position: absolute; // 绝对定位
+        top: 100%; // 在父元素底部显示
+        left: 0; // 对齐左侧
+        background-color: white;
+        border: 1px solid #ddd;
+        min-width: 160px;
+        z-index: 1000;
+        height: 200px;
+
+        li {
+            a {
+                display: block;
+                padding: 10px 20px;
+                color: #333;
+                text-decoration: none;
+                // display: block;
+
+                &:hover {
+                    background-color: @bg-color; // 悬停背景颜色
+                }
+            }
+        }
+    }
+}
+
+.padding-large{
+    padding-top: 7em;
+    padding-bottom: 7em;
+  .coneg{
+    display: flex;
+    .hek{
+        //    height: 300px;
+           
+          background-color: rgb(255, 255, 255);
+        
+          .icon-box{
+            .icon-box-icon{
+                svg{
+                    width: 26px;
+                    height: 26px;
+                    fill:aquamarine;
+                }
+            }
+          }
+    }
+}  
+   
+}
+
+
+.icon-box-content{
+   
+    background-color: aqua;
+    h3{
+        font-size: 1.5em;
+       
+    }
+
+    p{
+        font-size: 1.2em;
+        color: #717171;
+        margin-top: 0px;
+       
+    }
+}
+
+.product-store{
+    .container{
+            .row{
+              
+                .display-header{
+                        .btn-right{
+                             text-align: right;
+                             display: block                 ;
+                        }
+                }
+            }
+    }
+   
+    
+} 
+.pd-3{
+        padding-bottom: 1rem !important;
+    }
+.pe-3{
+    padding-right: 1rem !important;
+}
+.d-flex{
+    display: flex !important;
+}
+
+
+
+.no-padding-top{
+    padding-top: 0 !important;
+}
+
+.padding-large{
+    padding-bottom: 7em;
+}
+
+.padding-relative{
+    position: relative !important;
+}
+.product-store{
+    background-color: rgb(255, 255, 255);
+     min-width: 160px;
+    height: 300px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+
+        .navbar {
+            ul {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    }
+
+    .carousel {
+        flex-direction: column;
+        text-align: center;
+
+        .carousel-item {
+            max-width: 100%;
+        }
+
+        img {
+            width: 80%;
+            max-width: 300px;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        .navbar {
+            ul {
+                display: none;
+            }
+        }
+
+        .icons {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+    }
+
+    .carousel {
+        .carousel-item {
+            h2 {
+                font-size: 1.5em;
+            }
+        }
+
+        button {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    body {
+        background-color: rgb(205, 80, 13);
+    }
+}
+@media screen and (max-width: 1200px) {
+    body {
+        background-color: rgb(255, 0, 0);
+    }
+}
+
+@media screen and (max-width: 992px) {
+    body {
+        background-color: rgb(1, 46, 223);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    body {
+        background-color: rgb(219, 238, 10);
+    }
+}
+
+@media screen and (max-width: 575px) {
+    body {
+        background-color: lightgreen;
+    }
+}
